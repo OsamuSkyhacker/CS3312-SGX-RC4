@@ -1,0 +1,16 @@
+enclave {
+    from "Sealing/Sealing.edl" import *;
+
+    trusted {
+        /* define ECALLs here. */
+        public int secret_print_helloworld(void);
+        public void rc4_init([in, size=len] const unsigned char* key, size_t len);
+        public void rc4_crypt([in,out, size=len] unsigned char* data, size_t len);
+    };
+
+
+    untrusted {
+        /* define OCALLs here. */
+        void ocall_print([in, string]const char* str);
+    };
+};
