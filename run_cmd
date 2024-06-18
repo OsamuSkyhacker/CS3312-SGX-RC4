@@ -1,5 +1,0 @@
-export LD_LIBRARY_PATH=/opt/intel/sgxsdk/lib64:$LD_LIBRARY_PATH
-make clean
-make all
-./app
-make clean
